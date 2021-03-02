@@ -16,7 +16,7 @@ protocol ViewCodeConfiguration {
 extension ViewCodeConfiguration{
     func configureView(){
         
-        }
+    }
     func aplyViewCode(){
         buildHierachy()
         setupConstrainsts()
@@ -33,14 +33,11 @@ class ViewController: UIViewController {
     private lazy var labelPassWord: UILabel = {return UILabel(frame: .zero)}()
     private lazy var fieldNick: UITextField = {return UITextField(frame: .zero)}()
     private lazy var fieldPassWord: UITextField = {return UITextField(frame: .zero)}()
-   
+    
     private lazy var buttonOk = {return UIButton(frame: .zero)}()
     
-    
-
     override func viewDidLoad() {
         super.viewDidLoad()
-       print("Iniciou ViewController")
         title = "Exemplo com View Code"
         aplyViewCode()
     }
@@ -53,17 +50,10 @@ class ViewController: UIViewController {
         print("Clicou no botão logar!")
     }
     
-//    override func loadView() {
-//        let view = UIView(frame: UIScreen.main.bounds)
-//        view.backgroundColor = .white
-//        self.view = view
-//        title = "Example View code"
-//    }
-
-
 }
 
 extension ViewController: ViewCodeConfiguration{
+    
     func buildHierachy() {
         view.addSubview(imageView)
         view.addSubview(labelNick)
@@ -71,55 +61,60 @@ extension ViewController: ViewCodeConfiguration{
         view.addSubview(labelPassWord)
         view.addSubview(fieldPassWord)
         view.addSubview(buttonOk)
-       
+        
+        let arraySubViews = [imageView,labelNick,fieldNick,labelPassWord,fieldPassWord,buttonOk]
+        arraySubViews.forEach{ view in view.translatesAutoresizingMaskIntoConstraints = false }
     }
     
+    
     func setupConstrainsts() {
-        imageView.leadingAnchor.constraint(equalTo: view.leadingAnchor,constant:20).isActive = true
-        imageView.trailingAnchor.constraint(equalTo: view.trailingAnchor,constant:-20).isActive = true
-        imageView.centerXAnchor.constraint(equalTo: view.centerXAnchor,constant: 0).isActive = true
-        imageView.topAnchor.constraint(equalTo: view.topAnchor,constant:80).isActive = true
-        imageView.heightAnchor.constraint(equalToConstant: 150).isActive = true
+        
+        let constraints = [
+            imageView.leadingAnchor.constraint(equalTo: view.leadingAnchor,constant:20),
+            imageView.trailingAnchor.constraint(equalTo: view.trailingAnchor,constant:-20),
+            imageView.centerXAnchor.constraint(equalTo: view.centerXAnchor,constant: 0),
+            imageView.topAnchor.constraint(equalTo: view.topAnchor,constant:80),
+            imageView.heightAnchor.constraint(equalToConstant: 150),
+            
+            
+            labelNick.leadingAnchor.constraint(equalTo: view.leadingAnchor,constant:20),
+            labelNick.trailingAnchor.constraint(equalTo: view.trailingAnchor,constant:-20),
+            labelNick.centerXAnchor.constraint(equalTo: view.centerXAnchor,constant: 0),
+            labelNick.topAnchor.constraint(equalTo: imageView.bottomAnchor,constant:15),
+            
+            fieldNick.leadingAnchor.constraint(equalTo: labelNick.leadingAnchor),
+            fieldNick.trailingAnchor.constraint(equalTo: view.trailingAnchor,constant:-20),
+            fieldNick.centerXAnchor.constraint(equalTo: view.centerXAnchor,constant: 0),
+            fieldNick.topAnchor.constraint(equalTo: labelNick.bottomAnchor,constant:10),
+            
+            
+            labelPassWord.leadingAnchor.constraint(equalTo: fieldNick.leadingAnchor),
+            labelPassWord.trailingAnchor.constraint(equalTo: view.trailingAnchor,constant:-20),
+            labelPassWord.centerXAnchor.constraint(equalTo: view.centerXAnchor,constant: 0),
+            labelPassWord.topAnchor.constraint(equalTo: fieldNick.bottomAnchor,constant:15),
+            
+            fieldPassWord.leadingAnchor.constraint(equalTo: labelPassWord.leadingAnchor),
+            fieldPassWord.trailingAnchor.constraint(equalTo: view.trailingAnchor,constant:-20),
+            fieldPassWord.centerXAnchor.constraint(equalTo: view.centerXAnchor,constant: 0),
+            fieldPassWord.topAnchor.constraint(equalTo: labelPassWord.bottomAnchor,constant:10),
+            
+            
+            buttonOk.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            buttonOk.trailingAnchor.constraint(equalTo: view.trailingAnchor,constant:-20),
+            buttonOk.centerXAnchor.constraint(equalTo: view.centerXAnchor,constant: 0),
+            buttonOk.bottomAnchor.constraint(equalTo: view.bottomAnchor,constant:-30)
+        ]
+        
+        NSLayoutConstraint.activate(constraints)
         
         
-        labelNick.leadingAnchor.constraint(equalTo: view.leadingAnchor,constant:20).isActive = true
-        labelNick.trailingAnchor.constraint(equalTo: view.trailingAnchor,constant:-20).isActive = true
-        labelNick.centerXAnchor.constraint(equalTo: view.centerXAnchor,constant: 0).isActive = true
-        labelNick.topAnchor.constraint(equalTo: imageView.bottomAnchor,constant:15).isActive = true
-        
-        fieldNick.leadingAnchor.constraint(equalTo: labelNick.leadingAnchor).isActive = true
-        fieldNick.trailingAnchor.constraint(equalTo: view.trailingAnchor,constant:-20).isActive = true
-        fieldNick.centerXAnchor.constraint(equalTo: view.centerXAnchor,constant: 0).isActive = true
-        fieldNick.topAnchor.constraint(equalTo: labelNick.bottomAnchor,constant:10).isActive = true
-        
-        
-        labelPassWord.leadingAnchor.constraint(equalTo: fieldNick.leadingAnchor).isActive = true
-        labelPassWord.trailingAnchor.constraint(equalTo: view.trailingAnchor,constant:-20).isActive = true
-        labelPassWord.centerXAnchor.constraint(equalTo: view.centerXAnchor,constant: 0).isActive = true
-        labelPassWord.topAnchor.constraint(equalTo: fieldNick.bottomAnchor,constant:15).isActive = true
-        
-        fieldPassWord.leadingAnchor.constraint(equalTo: labelPassWord.leadingAnchor).isActive = true
-        fieldPassWord.trailingAnchor.constraint(equalTo: view.trailingAnchor,constant:-20).isActive = true
-        fieldPassWord.centerXAnchor.constraint(equalTo: view.centerXAnchor,constant: 0).isActive = true
-        fieldPassWord.topAnchor.constraint(equalTo: labelPassWord.bottomAnchor,constant:10).isActive = true
-        
-        buttonOk.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20).isActive = true
-        buttonOk.trailingAnchor.constraint(equalTo: view.trailingAnchor,constant:-20).isActive = true
-        buttonOk.centerXAnchor.constraint(equalTo: view.centerXAnchor,constant: 0).isActive = true
-        buttonOk.bottomAnchor.constraint(equalTo: view.bottomAnchor,constant:-30).isActive = true
-        
-        
-     
-       
     }
     
     func configureView(){
         imageView.contentMode = .scaleAspectFit
         imageView.image = UIImage(named: "imgSwift")
-        imageView.translatesAutoresizingMaskIntoConstraints = false //não segue as leis do auto Layout
         
         labelNick.text = "Nick Name"
-        labelNick.translatesAutoresizingMaskIntoConstraints = false
         
         fieldNick.backgroundColor = .white
         fieldNick.layer.borderWidth = 1
@@ -128,10 +123,8 @@ extension ViewController: ViewCodeConfiguration{
         fieldNick.placeholder = "Digite o seu nick Name"
         fieldNick.textAlignment = .center
         fieldNick.keyboardType = .default
-        fieldNick.translatesAutoresizingMaskIntoConstraints = false
         
         labelPassWord.text = "Password"
-        labelPassWord.translatesAutoresizingMaskIntoConstraints = false
         
         fieldNick.backgroundColor = .white
         fieldNick.layer.borderWidth = 1
@@ -140,7 +133,6 @@ extension ViewController: ViewCodeConfiguration{
         fieldNick.placeholder = "Digite o seu nick Name"
         fieldNick.textAlignment = .center
         fieldNick.keyboardType = .default
-        fieldNick.translatesAutoresizingMaskIntoConstraints = false
         
         fieldPassWord.backgroundColor = .white
         fieldPassWord.layer.borderWidth = 1
@@ -150,7 +142,6 @@ extension ViewController: ViewCodeConfiguration{
         fieldPassWord.textAlignment = .center
         fieldPassWord.keyboardType = .numberPad
         fieldPassWord.isSecureTextEntry = true
-        fieldPassWord.translatesAutoresizingMaskIntoConstraints = false
         
         buttonOk.setTitle("OK", for: .normal)
         buttonOk.backgroundColor = .systemOrange
@@ -158,7 +149,6 @@ extension ViewController: ViewCodeConfiguration{
         buttonOk.setTitleColor(.lightGray, for: .highlighted)
         buttonOk.addTarget(self, action: #selector(self.logar), for: .touchUpInside)
         buttonOk.layer.cornerRadius = 5
-        buttonOk.translatesAutoresizingMaskIntoConstraints = false
         
         
     }
