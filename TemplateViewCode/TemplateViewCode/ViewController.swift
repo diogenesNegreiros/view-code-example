@@ -21,7 +21,7 @@ extension ViewCodeConfiguration{
         buildHierachy()
         setupConstrainsts()
         configureView()
-        
+        	
     }
     
 }
@@ -38,7 +38,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Exemplo com View Code"
+        title = "Login"
         aplyViewCode()
     }
     
@@ -55,15 +55,13 @@ class ViewController: UIViewController {
 extension ViewController: ViewCodeConfiguration{
     
     func buildHierachy() {
-        view.addSubview(imageView)
-        view.addSubview(labelNick)
-        view.addSubview(fieldNick)
-        view.addSubview(labelPassWord)
-        view.addSubview(fieldPassWord)
-        view.addSubview(buttonOk)
-        
         let arraySubViews = [imageView,labelNick,fieldNick,labelPassWord,fieldPassWord,buttonOk]
-        arraySubViews.forEach{ view in view.translatesAutoresizingMaskIntoConstraints = false }
+        
+        arraySubViews.forEach{
+            item in
+            view.addSubview(item)
+            item.translatesAutoresizingMaskIntoConstraints = false
+        }
     }
     
     
