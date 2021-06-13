@@ -13,6 +13,7 @@
 		997E63B325EADCD6000EAAB8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997E63B225EADCD6000EAAB8 /* ViewController.swift */; };
 		997E63B825EADCD8000EAAB8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 997E63B725EADCD8000EAAB8 /* Assets.xcassets */; };
 		997E63BB25EADCD8000EAAB8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 997E63B925EADCD8000EAAB8 /* LaunchScreen.storyboard */; };
+		99BF48D62676B5410038AD9B /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 99BF48D52676B5410038AD9B /* Podfile */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		997E63B725EADCD8000EAAB8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		997E63BA25EADCD8000EAAB8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		997E63BC25EADCD8000EAAB8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		99BF48D52676B5410038AD9B /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,6 +50,7 @@
 		997E63A225EADCD6000EAAB8 = {
 			isa = PBXGroup;
 			children = (
+				99BF48D52676B5410038AD9B /* Podfile */,
 				997E63AD25EADCD6000EAAB8 /* TemplateViewCode */,
 				997E63AC25EADCD6000EAAB8 /* Products */,
 			);
@@ -134,6 +137,7 @@
 			files = (
 				9968DD6025EC23530092C3F7 /* imgSwift.png in Resources */,
 				997E63BB25EADCD8000EAAB8 /* LaunchScreen.storyboard in Resources */,
+				99BF48D62676B5410038AD9B /* Podfile in Resources */,
 				997E63B825EADCD8000EAAB8 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -289,6 +293,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8QS6PBHYYD;
 				INFOPLIST_FILE = TemplateViewCode/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -308,6 +313,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8QS6PBHYYD;
 				INFOPLIST_FILE = TemplateViewCode/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
