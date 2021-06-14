@@ -1,0 +1,13 @@
+/* 
+  Localizable.strings
+  TemplateViewCode
+
+  Created by Diogenes de Souza on 13/06/21.
+  
+*/
+
+"app.name" = "Exemplo com View Code";
+"form.name" = "Nome";
+"form.password" = "Senha";
+"form.placeholder.name" = "Digite o seu nome";
+"form.placeholder.password" = "Digite a sua senha";

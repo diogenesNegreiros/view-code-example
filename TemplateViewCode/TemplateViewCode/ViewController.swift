@@ -14,21 +14,17 @@ protocol ViewCodeConfiguration {
 }
 
 extension ViewCodeConfiguration{
-    func configureView(){
-        
-    }
+    func configureView(){}
     func aplyViewCode(){
         buildHierachy()
         setupConstrainsts()
         configureView()
-        
     }
-    
 }
 
 class ViewController: UIViewController {
     
-    private lazy var imageView: UIImageView = {return UIImageView(frame: .zero)}()
+    let imageView = UIImageView(image: Assets.swift.image)
     private lazy var labelNick: UILabel = {return UILabel(frame: .zero)}()
     private lazy var labelPassWord: UILabel = {return UILabel(frame: .zero)}()
     private lazy var fieldNick: UITextField = {return UITextField(frame: .zero)}()
@@ -38,7 +34,8 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Exemplo com View Code"
+        title = L10n.App.name
+        
         aplyViewCode()
     }
     
@@ -65,7 +62,6 @@ extension ViewController: ViewCodeConfiguration{
         let arraySubViews = [imageView,labelNick,fieldNick,labelPassWord,fieldPassWord,buttonOk]
         arraySubViews.forEach{ view in view.translatesAutoresizingMaskIntoConstraints = false }
     }
-    
     
     func setupConstrainsts() {
         
@@ -104,55 +100,41 @@ extension ViewController: ViewCodeConfiguration{
             buttonOk.centerXAnchor.constraint(equalTo: view.centerXAnchor,constant: 0),
             buttonOk.bottomAnchor.constraint(equalTo: view.bottomAnchor,constant:-30)
         ]
-        
         NSLayoutConstraint.activate(constraints)
-        
-        
     }
     
     func configureView(){
+        
         imageView.contentMode = .scaleAspectFit
-        imageView.image = UIImage(named: "imgSwift")
         
-        labelNick.text = "Nick Name"
         
-        fieldNick.backgroundColor = .white
-        fieldNick.layer.borderWidth = 1
-        fieldNick.layer.borderColor = UIColor.gray.cgColor
-        fieldNick.layer.cornerRadius = 8
-        fieldNick.placeholder = "Digite o seu nick Name"
-        fieldNick.textAlignment = .center
-        fieldNick.keyboardType = .default
-        
-        labelPassWord.text = "Password"
+        labelNick.text = L10n.Form.name
         
         fieldNick.backgroundColor = .white
         fieldNick.layer.borderWidth = 1
         fieldNick.layer.borderColor = UIColor.gray.cgColor
         fieldNick.layer.cornerRadius = 8
-        fieldNick.placeholder = "Digite o seu nick Name"
+        fieldNick.placeholder = L10n.Form.Placeholder.name
         fieldNick.textAlignment = .center
         fieldNick.keyboardType = .default
+        
+        labelPassWord.text = L10n.Form.password
         
         fieldPassWord.backgroundColor = .white
         fieldPassWord.layer.borderWidth = 1
         fieldPassWord.layer.borderColor = UIColor.gray.cgColor
         fieldPassWord.layer.cornerRadius = 8
-        fieldPassWord.placeholder = "Digite sua senha"
+        fieldPassWord.placeholder = L10n.Form.Placeholder.password
         fieldPassWord.textAlignment = .center
         fieldPassWord.keyboardType = .numberPad
         fieldPassWord.isSecureTextEntry = true
         
         buttonOk.setTitle("OK", for: .normal)
-        buttonOk.backgroundColor = .systemOrange
+        buttonOk.backgroundColor = Assets.Colors.amber.color
         buttonOk.setTitleColor(.white, for: .normal)
         buttonOk.setTitleColor(.lightGray, for: .highlighted)
         buttonOk.addTarget(self, action: #selector(self.logar), for: .touchUpInside)
         buttonOk.layer.cornerRadius = 5
-        
-        
     }
-    
-    
 }
 

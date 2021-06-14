@@ -1,0 +1,14 @@
+strings:
+  inputs: TemplateViewCode/Base.lproj
+  filter: .+\.strings$
+  outputs:
+    - templateName: structured-swift5
+      output: TemplateViewCode/L10n-Constants.swift
+xcassets:
+  - inputs: TemplateViewCode/Assets.xcassets
+    outputs:
+      - templateName: swift5
+        output: TemplateViewCode/Assets.swift
+        params:
+          enumName: Assets
+
