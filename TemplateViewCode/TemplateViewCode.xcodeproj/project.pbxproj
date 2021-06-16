@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		3C12489330DB9EF35FDA733E /* libPods-TemplateViewCode.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B646153901F8BE1843C2013 /* libPods-TemplateViewCode.a */; };
+		993762FE2679917E001B5D07 /* DepositListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993762FD2679917E001B5D07 /* DepositListViewController.swift */; };
+		993763002679919F001B5D07 /* DepositListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993762FF2679919F001B5D07 /* DepositListViewModel.swift */; };
+		99376302267991BF001B5D07 /* DepositListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99376301267991BF001B5D07 /* DepositListView.swift */; };
+		9937630526799564001B5D07 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9937630426799564001B5D07 /* MainCoordinator.swift */; };
+		99376308267997A4001B5D07 /* MainViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99376307267997A4001B5D07 /* MainViewControllerDelegate.swift */; };
+		9937630B26799901001B5D07 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9937630A26799901001B5D07 /* MainViewController.swift */; };
 		9975BDDA26783E9300368035 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9975BDD926783E9300368035 /* LoginViewModel.swift */; };
 		9975BDDC26783ECC00368035 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9975BDDB26783ECC00368035 /* LoginView.swift */; };
 		9975BDDF267840E500368035 /* ViewConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9975BDDE267840E500368035 /* ViewConfiguration.swift */; };
@@ -26,6 +32,12 @@
 /* Begin PBXFileReference section */
 		5A3A92CCAB6C8837B7CBB04E /* Pods-TemplateViewCode.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TemplateViewCode.release.xcconfig"; path = "Target Support Files/Pods-TemplateViewCode/Pods-TemplateViewCode.release.xcconfig"; sourceTree = "<group>"; };
 		8B646153901F8BE1843C2013 /* libPods-TemplateViewCode.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TemplateViewCode.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		993762FD2679917E001B5D07 /* DepositListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepositListViewController.swift; sourceTree = "<group>"; };
+		993762FF2679919F001B5D07 /* DepositListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepositListViewModel.swift; sourceTree = "<group>"; };
+		99376301267991BF001B5D07 /* DepositListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepositListView.swift; sourceTree = "<group>"; };
+		9937630426799564001B5D07 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
+		99376307267997A4001B5D07 /* MainViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewControllerDelegate.swift; sourceTree = "<group>"; };
+		9937630A26799901001B5D07 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		9975BDD926783E9300368035 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		9975BDDB26783ECC00368035 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		9975BDDE267840E500368035 /* ViewConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewConfiguration.swift; sourceTree = "<group>"; };
@@ -66,6 +78,40 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		993762FC26799134001B5D07 /* DepositList */ = {
+			isa = PBXGroup;
+			children = (
+				993762FD2679917E001B5D07 /* DepositListViewController.swift */,
+				993762FF2679919F001B5D07 /* DepositListViewModel.swift */,
+				99376301267991BF001B5D07 /* DepositListView.swift */,
+			);
+			path = DepositList;
+			sourceTree = "<group>";
+		};
+		993763032679950F001B5D07 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				9937630426799564001B5D07 /* MainCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		9937630626799772001B5D07 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				99376307267997A4001B5D07 /* MainViewControllerDelegate.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		99376309267998C9001B5D07 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				9937630A26799901001B5D07 /* MainViewController.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		9975BDD826783E5300368035 /* Login */ = {
 			isa = PBXGroup;
 			children = (
@@ -79,6 +125,7 @@
 		9975BDDD267840B300368035 /* Protocol */ = {
 			isa = PBXGroup;
 			children = (
+				9937630626799772001B5D07 /* Coordinator */,
 				9975BDE02678410300368035 /* View */,
 			);
 			path = Protocol;
@@ -121,7 +168,10 @@
 		997E63AD25EADCD6000EAAB8 /* TemplateViewCode */ = {
 			isa = PBXGroup;
 			children = (
+				99376309267998C9001B5D07 /* Extensions */,
+				993763032679950F001B5D07 /* Coordinator */,
 				9975BDDD267840B300368035 /* Protocol */,
+				993762FC26799134001B5D07 /* DepositList */,
 				9975BDD826783E5300368035 /* Login */,
 				997E63B725EADCD8000EAAB8 /* Assets.xcassets */,
 				997E63B925EADCD8000EAAB8 /* LaunchScreen.storyboard */,
@@ -237,13 +287,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				999E18832676CAD900BED6D9 /* L10n-Constants.swift in Sources */,
+				9937630526799564001B5D07 /* MainCoordinator.swift in Sources */,
+				993763002679919F001B5D07 /* DepositListViewModel.swift in Sources */,
 				9975BDDC26783ECC00368035 /* LoginView.swift in Sources */,
 				997E63B325EADCD6000EAAB8 /* LoginViewController.swift in Sources */,
 				9975BDDA26783E9300368035 /* LoginViewModel.swift in Sources */,
+				993762FE2679917E001B5D07 /* DepositListViewController.swift in Sources */,
+				9937630B26799901001B5D07 /* MainViewController.swift in Sources */,
 				997E63AF25EADCD6000EAAB8 /* AppDelegate.swift in Sources */,
 				9975BDDF267840E500368035 /* ViewConfiguration.swift in Sources */,
 				999E18882676EFCE00BED6D9 /* Assets.swift in Sources */,
 				997E63B125EADCD6000EAAB8 /* SceneDelegate.swift in Sources */,
+				99376302267991BF001B5D07 /* DepositListView.swift in Sources */,
+				99376308267997A4001B5D07 /* MainViewControllerDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
