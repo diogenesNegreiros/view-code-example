@@ -25,6 +25,8 @@ internal enum Assets {
     internal static let accentColor = ColorAsset(name: "Colors/AccentColor")
     internal static let amber = ColorAsset(name: "Colors/Amber")
   }
+  internal static let launchScreen = ImageAsset(name: "LaunchScreen")
+  internal static let arrowBack = ImageAsset(name: "arrowBack")
   internal static let swift = ImageAsset(name: "swift")
 }
 // swiftlint:enable identifier_name line_length nesting type_body_length type_name

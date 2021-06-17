@@ -77,7 +77,6 @@ extension LoginView: ViewConfiguration {
     }
     
     func configureViews(){
-        
         imageView.contentMode = .scaleAspectFit
         labelNick.text = L10n.Form.name
         fieldNick.backgroundColor = .white
@@ -101,5 +100,6 @@ extension LoginView: ViewConfiguration {
         buttonOk.setTitleColor(.white, for: .normal)
         buttonOk.setTitleColor(.lightGray, for: .highlighted)
         buttonOk.layer.cornerRadius = 5
+      
     }
 }

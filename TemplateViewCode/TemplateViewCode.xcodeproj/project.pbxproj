@@ -142,14 +142,16 @@
 		997E63A225EADCD6000EAAB8 = {
 			isa = PBXGroup;
 			children = (
+				999E187F2676C45200BED6D9 /* swiftgen.yml */,
 				999E18872676EFCE00BED6D9 /* Assets.swift */,
 				999E18812676CAD900BED6D9 /* L10n-Constants.swift */,
-				999E187F2676C45200BED6D9 /* swiftgen.yml */,
 				99BF48D52676B5410038AD9B /* Podfile */,
 				99BF48D72676C06B0038AD9B /* README.md */,
 				997E63AE25EADCD6000EAAB8 /* AppDelegate.swift */,
 				997E63B025EADCD6000EAAB8 /* SceneDelegate.swift */,
 				999E18842676CC0400BED6D9 /* Localizable.strings */,
+				997E63B725EADCD8000EAAB8 /* Assets.xcassets */,
+				997E63B925EADCD8000EAAB8 /* LaunchScreen.storyboard */,
 				997E63AD25EADCD6000EAAB8 /* TemplateViewCode */,
 				997E63AC25EADCD6000EAAB8 /* Products */,
 				7CD93908BFDEAF816F4AD5C5 /* Pods */,
@@ -168,14 +170,12 @@
 		997E63AD25EADCD6000EAAB8 /* TemplateViewCode */ = {
 			isa = PBXGroup;
 			children = (
+				997E63BC25EADCD8000EAAB8 /* Info.plist */,
 				99376309267998C9001B5D07 /* Extensions */,
 				993763032679950F001B5D07 /* Coordinator */,
 				9975BDDD267840B300368035 /* Protocol */,
 				993762FC26799134001B5D07 /* DepositList */,
 				9975BDD826783E5300368035 /* Login */,
-				997E63B725EADCD8000EAAB8 /* Assets.xcassets */,
-				997E63B925EADCD8000EAAB8 /* LaunchScreen.storyboard */,
-				997E63BC25EADCD8000EAAB8 /* Info.plist */,
 			);
 			path = TemplateViewCode;
 			sourceTree = "<group>";

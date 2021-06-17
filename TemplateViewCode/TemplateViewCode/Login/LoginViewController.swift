@@ -7,7 +7,7 @@
 
 import UIKit
 
-class LoginViewController: UIViewController {
+class LoginViewController: MainViewController {
     
     private let customView = LoginView()
     private var viewModel = LoginViewModel()

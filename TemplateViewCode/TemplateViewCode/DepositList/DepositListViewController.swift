@@ -7,7 +7,7 @@
 
 import UIKit
 
-class DepositListViewController: UIViewController {
+class DepositListViewController: MainViewController {
 
     private let customView = DepositListView()
     private var viewModel = DepositViewModel()
