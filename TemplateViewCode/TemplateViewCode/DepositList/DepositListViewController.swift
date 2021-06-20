@@ -26,6 +26,11 @@ class DepositListViewController: MainViewController {
         title = L10n.App.name
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: false)
+    }
+    
     override func loadView() {
         super.loadView()
         view = customView

@@ -10,15 +10,19 @@ import UIKit
 
 class LoginViewController: MainViewController {
     
+  
     let customView = LoginView()
     var viewModel: LoginViewModel! {
         didSet {
-            title = viewModel.user?.name
+            title = viewModel.user.name
         }
     }
     
-    init(viewModel: LoginViewModel) {
+    private let coordinator: LoginCoordinator
+    
+    init(viewModel: LoginViewModel, coordinator: LoginCoordinator) {
         self.viewModel = viewModel
+        self.coordinator = coordinator
         super.init(nibName: nil, bundle: nil)
         view.backgroundColor = .white
     }
@@ -35,7 +39,6 @@ class LoginViewController: MainViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.isNavigationBarHidden = true
-        //        title = L10n.App.name
         customView.userName.text = "Entre com seu login!"
         customView.buttonOk.addTarget(self, action: #selector(logar), for: .touchUpInside)
         
@@ -65,6 +68,7 @@ extension LoginViewController: LoginViewModelDelegate {
         
         if isLogin {
             customView.userName.textColor = .green
+            self.coordinator.goToTable()
         }
         else{
             customView.userName.textColor = .red
@@ -76,4 +80,5 @@ extension LoginViewController: LoginViewModelDelegate {
         customView.indicator.startAnimating()
     }
 }
+
 

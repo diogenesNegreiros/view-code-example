@@ -12,26 +12,25 @@ protocol Coordinator {
     func start()
 }
 
-protocol MainCoordinatorParentDelegate: AnyObject {
-    func didFinish(coordinator: MainCoordinator)
+protocol BaseCoordinatorParentDelegate: AnyObject {
+    func didFinish(coordinator: BaseCoordinator)
 }
 
-@objc class MainCoordinator: NSObject {
+@objc class BaseCoordinator: NSObject {
     
     // MARK: - Private properties
 
     internal var identifier: String { return String(describing: Self.self) }
-    internal var childCoordinators = [String: MainCoordinator]()
+    internal var childCoordinators = [String: BaseCoordinator]()
     
     // MARK: - Public properties
     
+    weak var parentDelegate: BaseCoordinatorParentDelegate?
     var rootViewController: MainViewController? {
         didSet {
             rootViewController?.delegate = self
         }
     }
-    
-    weak var parentDelegate: MainCoordinatorParentDelegate?
     
     // MARK: - Public methods
     
@@ -39,43 +38,45 @@ protocol MainCoordinatorParentDelegate: AnyObject {
         fatalError("Should be implemented.")
     }
 
-    func coordinate(to coordinator: MainCoordinator, parent: MainCoordinator) {
+    func coordinate(to coordinator: BaseCoordinator, parent: BaseCoordinator) {
         
-        childStore(coordinator)
         coordinator.parentDelegate = parent
+        childStore(coordinator)
         coordinator.start()
     }
 }
 
 // MARK: - Private methods
 
-extension MainCoordinator {
+extension BaseCoordinator {
     
-    private func childStore(_ coordinator: MainCoordinator) {
+    private func childStore(_ coordinator: BaseCoordinator) {
         childCoordinators[coordinator.identifier] = coordinator
     }
     
-    private func childFree(_ coordinator: MainCoordinator) {
+    private func childFree(_ coordinator: BaseCoordinator) {
         childCoordinators[coordinator.identifier] = nil
     }
 }
 
-// MARK: - MainCoordinatorParentDelegate
-
-extension MainCoordinator: MainCoordinatorParentDelegate {
-    
-    func didFinish(coordinator: MainCoordinator) {
-        childFree(coordinator)
-    }
-}
 
 // MARK: - BaseViewControllerDelegate
 
-extension MainCoordinator: MainViewControllerDelegate {
+extension BaseCoordinator: MainViewControllerDelegate {
     
     func didMoveFromNavigationStack(_ viewController: UIViewController) {
         guard rootViewController === viewController else { return }
         
         parentDelegate?.didFinish(coordinator: self)
+    }
+    
+}
+
+// MARK: - BaseCoordinatorParentDelegate
+
+extension BaseCoordinator: BaseCoordinatorParentDelegate {
+    
+    func didFinish(coordinator: BaseCoordinator) {
+        childFree(coordinator)
     }
 }

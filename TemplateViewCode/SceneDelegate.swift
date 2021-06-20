@@ -9,27 +9,23 @@ import UIKit
 
 @available(iOS 13.0, *)
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
-
+    
     var window: UIWindow?
-
-
+    
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         
-        let userDefault = User(name: "", password: "")
-
         if let widowScene = scene as? UIWindowScene{
-            let viewModel = LoginViewModel(user: userDefault)
+            print("Executou SceneDelegate")
+            let userDefault = User(name: "", password: "")
+            let navController = UINavigationController()
+            let coordinator = LoginCoordinator(navigationController: navController, user: userDefault)
+            coordinator.start()
+            
             let window = UIWindow (windowScene: widowScene)
-            let vc = LoginViewController(viewModel: viewModel)
-//            vc.view.backgroundColor = .white
-            window.rootViewController = UINavigationController(rootViewController: vc)
-            self.window = window
+            window.rootViewController = navController
             window.makeKeyAndVisible()
+            self.window = window
         }
     }
-
-  
-
-
 }
 

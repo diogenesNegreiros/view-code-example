@@ -15,8 +15,7 @@ protocol LoginViewModelDelegate: AnyObject {
 class LoginViewModel {
     
     weak var delegate: LoginViewModelDelegate?
-    
-    let user: User?
+    var user: User = User(name: "", password: "")
     
     init(user: User) {
         self.user = user

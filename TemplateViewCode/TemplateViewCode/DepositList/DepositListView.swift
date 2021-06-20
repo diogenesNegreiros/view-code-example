@@ -9,8 +9,10 @@ import Foundation
 import UIKit
 
 class DepositListView: UIView {
+    
     init() {
-        super.init(frame:  .zero)
+        super.init(frame: .zero)
+        self.backgroundColor = .white
     }
     
     required init?(coder: NSCoder) {
