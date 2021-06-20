@@ -31,18 +31,18 @@ protocol MainCoordinatorParentDelegate: AnyObject {
         }
     }
     
-    weak var parent: MainCoordinatorParentDelegate?
+    weak var parentDelegate: MainCoordinatorParentDelegate?
     
     // MARK: - Public methods
     
     func start() {
-        fatalError("Start method should be implemented.")
+        fatalError("Should be implemented.")
     }
 
     func coordinate(to coordinator: MainCoordinator, parent: MainCoordinator) {
         
-        store(coordinator)
-        coordinator.parent = parent
+        childStore(coordinator)
+        coordinator.parentDelegate = parent
         coordinator.start()
     }
 }
@@ -51,21 +51,21 @@ protocol MainCoordinatorParentDelegate: AnyObject {
 
 extension MainCoordinator {
     
-    private func store(_ coordinator: MainCoordinator) {
+    private func childStore(_ coordinator: MainCoordinator) {
         childCoordinators[coordinator.identifier] = coordinator
     }
     
-    private func free(_ coordinator: MainCoordinator) {
+    private func childFree(_ coordinator: MainCoordinator) {
         childCoordinators[coordinator.identifier] = nil
     }
 }
 
-// MARK: - BaseCoordinatorParentDelegate
+// MARK: - MainCoordinatorParentDelegate
 
 extension MainCoordinator: MainCoordinatorParentDelegate {
     
     func didFinish(coordinator: MainCoordinator) {
-        free(coordinator)
+        childFree(coordinator)
     }
 }
 
@@ -76,6 +76,6 @@ extension MainCoordinator: MainViewControllerDelegate {
     func didMoveFromNavigationStack(_ viewController: UIViewController) {
         guard rootViewController === viewController else { return }
         
-        parent?.didFinish(coordinator: self)
+        parentDelegate?.didFinish(coordinator: self)
     }
 }

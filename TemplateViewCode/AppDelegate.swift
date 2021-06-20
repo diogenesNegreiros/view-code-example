@@ -10,10 +10,17 @@ import UIKit
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
-
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+    var window: UIWindow?
     
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        
+        self.window = UIWindow(frame: UIScreen.main.bounds)
+        let userDefault = User(name: "", password: "")
+        let viewModel = LoginViewModel(user: userDefault)
+        let vc = LoginViewController(viewModel: viewModel)
+        vc.view.backgroundColor = .white
+        self.window?.rootViewController = UINavigationController(rootViewController: vc)
+        self.window?.makeKeyAndVisible()
         return true
     }
 

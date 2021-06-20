@@ -14,13 +14,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
+        
+        let userDefault = User(name: "", password: "")
 
         if let widowScene = scene as? UIWindowScene{
-            let viewModel = LoginViewModel()
-            
+            let viewModel = LoginViewModel(user: userDefault)
             let window = UIWindow (windowScene: widowScene)
             let vc = LoginViewController(viewModel: viewModel)
-            vc.view.backgroundColor = .white
+//            vc.view.backgroundColor = .white
             window.rootViewController = UINavigationController(rootViewController: vc)
             self.window = window
             window.makeKeyAndVisible()
