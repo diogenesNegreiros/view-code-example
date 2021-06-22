@@ -23,7 +23,7 @@ class DepositListViewController: MainViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = L10n.App.name
+//        title = L10n.App.name
     }
     
     override func viewWillAppear(_ animated: Bool) {

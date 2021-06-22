@@ -29,6 +29,7 @@
 		999E18882676EFCE00BED6D9 /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999E18872676EFCE00BED6D9 /* Assets.swift */; };
 		99BF48D62676B5410038AD9B /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 99BF48D52676B5410038AD9B /* Podfile */; };
 		99BF48D82676C06C0038AD9B /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 99BF48D72676C06B0038AD9B /* README.md */; };
+		99D0A57726816F1500B8EADA /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99D0A57626816F1500B8EADA /* UIViewExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +59,7 @@
 		999E18872676EFCE00BED6D9 /* Assets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Assets.swift; path = TemplateViewCode/Assets.swift; sourceTree = "<group>"; };
 		99BF48D52676B5410038AD9B /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		99BF48D72676C06B0038AD9B /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		99D0A57626816F1500B8EADA /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		CFF38E7AF99A19FC9E0A78BE /* Pods-TemplateViewCode.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TemplateViewCode.debug.xcconfig"; path = "Target Support Files/Pods-TemplateViewCode/Pods-TemplateViewCode.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -111,7 +113,8 @@
 		99376309267998C9001B5D07 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				9937630A26799901001B5D07 /* MainViewController.swift */,
+				99D0A57526816EF500B8EADA /* UIView */,
+				99D0A57426816EC500B8EADA /* MainViewController */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -192,6 +195,22 @@
 				9975BDD826783E5300368035 /* Login */,
 			);
 			path = TemplateViewCode;
+			sourceTree = "<group>";
+		};
+		99D0A57426816EC500B8EADA /* MainViewController */ = {
+			isa = PBXGroup;
+			children = (
+				9937630A26799901001B5D07 /* MainViewController.swift */,
+			);
+			path = MainViewController;
+			sourceTree = "<group>";
+		};
+		99D0A57526816EF500B8EADA /* UIView */ = {
+			isa = PBXGroup;
+			children = (
+				99D0A57626816F1500B8EADA /* UIViewExtension.swift */,
+			);
+			path = UIView;
 			sourceTree = "<group>";
 		};
 		D9FAD35468AE8D701DCACB02 /* Frameworks */ = {
@@ -308,6 +327,7 @@
 				9975BDDA26783E9300368035 /* LoginViewModel.swift in Sources */,
 				993762FE2679917E001B5D07 /* DepositListViewController.swift in Sources */,
 				9937630B26799901001B5D07 /* MainViewController.swift in Sources */,
+				99D0A57726816F1500B8EADA /* UIViewExtension.swift in Sources */,
 				99428F62267BF82500134CC4 /* User.swift in Sources */,
 				997E63AF25EADCD6000EAAB8 /* AppDelegate.swift in Sources */,
 				9975BDDF267840E500368035 /* ViewConfiguration.swift in Sources */,
